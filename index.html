@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>هوش برتر | کلاس آنلاین</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="app">
+  <header class="topbar">
+    <div>
+      <div class="brand">هوش برتر</div>
+      <div class="sub">سامانه کلاس آنلاین</div>
+    </div>
+    <span id="status" class="status">آماده</span>
+  </header>
+
+  <main>
+    <section id="join" class="card join-card">
+      <h1>ورود به کلاس</h1>
+      <p>نام و کد اتاق را وارد کنید.</p>
+      <input id="name" placeholder="نام شما" maxlength="30">
+      <input id="room" placeholder="کد کلاس، مثلاً 8A" maxlength="30">
+      <button id="joinBtn" class="primary">ورود به کلاس</button>
+      <small>برای تماس واقعی بین چند دستگاه، سرور Node.js این پروژه را اجرا کنید.</small>
+    </section>
+
+    <section id="classroom" class="hidden">
+      <div class="room-head card">
+        <div><b>کلاس:</b> <span id="roomLabel">-</span></div>
+        <button id="leaveBtn" class="danger">خروج</button>
+      </div>
+
+      <div id="videos" class="video-grid">
+        <div class="video-card">
+          <video id="localVideo" autoplay muted playsinline></video>
+          <span class="tag">شما</span>
+        </div>
+      </div>
+
+      <div class="controls">
+        <button id="micBtn">🎙️ میکروفون</button>
+        <button id="camBtn">📷 دوربین</button>
+        <button id="screenBtn">🖥️ اشتراک صفحه</button>
+      </div>
+
+      <div class="chat card">
+        <h2>💬 چت کلاس</h2>
+        <div id="messages" class="messages"></div>
+        <div class="send">
+          <input id="message" placeholder="پیام خود را بنویسید..." maxlength="300">
+          <button id="sendBtn" class="primary">ارسال</button>
+        </div>
+      </div>
+    </section>
+  </main>
+</div>
+<script src="/socket.io/socket.io.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
